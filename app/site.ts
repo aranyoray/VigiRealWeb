@@ -1,6 +1,7 @@
 /** Single source of truth for names, URLs and contact details used across the site. */
 export const site = {
   name: "VigiReal",
+  developer: "Ren DeWal",
   tagline:
     "Environmental-health risk for your area, from open U.S. government data.",
   description:

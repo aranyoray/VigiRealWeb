@@ -282,7 +282,7 @@ export default function HomePage() {
                   government agency. Official public-health advisories are the source of truth, and
                   every place screen links to them. In an emergency, call 911.
                 </p>
-                <p className="mt-3 text-sm text-muted">Built for the Congressional App Challenge.</p>
+                <p className="mt-3 text-sm text-muted">Developed by {site.developer}. Built for the Congressional App Challenge.</p>
               </div>
               <div className="flex flex-col items-start gap-3 md:items-end">
                 <StoreButton />

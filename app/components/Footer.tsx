@@ -12,8 +12,8 @@ export function Footer() {
             advisories are the source of truth. In an emergency, call 911.
           </p>
           <p className="mt-4 text-xs text-muted">
-            Not affiliated with or endorsed by the CDC, NOAA, USGS or any state agency.
-            Built for the Congressional App Challenge.
+            Developed by {site.developer}. Built for the Congressional App Challenge. Not affiliated
+            with or endorsed by the CDC, NOAA, USGS or any state agency.
           </p>
         </div>
         <div className="text-sm">
@@ -39,7 +39,7 @@ export function Footer() {
       </div>
       <div className="border-t border-line">
         <p className="mx-auto max-w-6xl px-4 py-5 text-xs text-muted sm:px-6">
-          © 2026 {site.name}. Version {site.version} · requires iOS {site.minimumIOS} or later.
+          © 2026 {site.developer}. {site.name} version {site.version} · requires iOS {site.minimumIOS} or later.
         </p>
       </div>
     </footer>

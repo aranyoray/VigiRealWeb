@@ -13,7 +13,7 @@ export const site = {
   /** Leave empty until the App Store listing is live; the buttons switch to "Coming soon". */
   appStoreUrl: "",
   bundleId: "org.vigireal.app",
-  version: "1.0",
+  version: "1.1",
   policyEffective: "2026-11-23",
   minimumIOS: "17.0",
 } as const;

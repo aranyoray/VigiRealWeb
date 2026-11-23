@@ -1,26 +1,79 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
+  --deep: #060b14;
+  --surface: #0b1220;
+  --surface-2: #111a2b;
+  --line: rgba(255, 255, 255, 0.08);
+  --ink: #e6edf7;
+  --muted: #94a3b8;
+  --accent: #2dd4bf;
+  --accent-deep: #0f766e;
+  --critical: #ef4444;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-deep: var(--deep);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-line: var(--line);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-deep: var(--accent-deep);
+  --color-critical: var(--critical);
+  --color-risk-low: #22c55e;
+  --color-risk-moderate: #f59e0b;
+  --color-risk-high: #fb923c;
+  --color-risk-critical: #ef4444;
+  --color-risk-unknown: #94a3b8;
+  --color-hazard-disease: #f472b6;
+  --color-hazard-water: #60a5fa;
+  --color-hazard-bloom: #4ade80;
+  --color-hazard-tick: #fb923c;
+  --color-hazard-chronic: #a78bfa;
+  --color-hazard-allergy: #facc15;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--deep);
+  color: var(--ink);
+  font-feature-settings: "ss01", "cv11";
+}
+
+/* Soft teal glow used behind hero and section headers. */
+.glow {
+  background:
+    radial-gradient(60% 50% at 50% 0%, rgba(45, 212, 191, 0.16), transparent 70%),
+    radial-gradient(40% 40% at 85% 20%, rgba(239, 68, 68, 0.08), transparent 70%);
+}
+
+.prose-site h2 {
+  @apply mt-12 mb-3 text-xl font-semibold tracking-tight text-ink;
+}
+.prose-site h3 {
+  @apply mt-8 mb-2 text-base font-semibold text-ink;
+}
+.prose-site p,
+.prose-site li {
+  @apply leading-relaxed text-muted;
+}
+.prose-site p {
+  @apply my-3;
+}
+.prose-site ul {
+  @apply my-3 list-disc space-y-2 pl-6;
+}
+.prose-site a {
+  @apply text-accent underline-offset-4 hover:underline;
+}
+.prose-site strong {
+  @apply text-ink font-medium;
 }

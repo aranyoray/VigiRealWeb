@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# VigiReal website
 
-## Getting Started
+Marketing site, `/support` and `/privacy` pages for the VigiReal iOS app
+(bundle `org.vigireal.app`). Next.js 16 App Router, Tailwind CSS 4, TypeScript. Dark theme only,
+matching the app.
 
-First, run the development server:
+## Run
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev        # http://localhost:3000
+npm run build && npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Edit
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `app/site.ts` — every name, URL and email in one place. Set `appStoreUrl` when the listing is live
+  and the "Coming soon" pills become real App Store buttons.
+- `app/page.tsx` — home. `app/support/page.tsx` — FAQ + contact. `app/privacy/page.tsx` — policy.
+- `public/img/shots/*.png` — real simulator screenshots (iPhone 18 Pro, dark appearance), captured with
+  `xcrun simctl launch … -VigiRealSkipIntro YES -VigiRealInitialState NY -VigiRealInitialTab <tab>` from
+  the iOS project, then `sips -Z 1957`.
+- `app/opengraph-image.tsx`, `app/sitemap.ts`, `app/robots.ts`, `app/manifest.ts` — generated metadata.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Deploy
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Static-friendly; any Next.js host (Vercel, Netlify, Cloudflare) works with zero config.
